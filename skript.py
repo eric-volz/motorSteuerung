@@ -1,5 +1,5 @@
 import time
-import Rpi.GPIO as GPIO
+import RPi.GPIO as GPIO
 
 GPIO.setmode(GPIO.BOARD)
 GPIO.setwarnings(False)
@@ -27,6 +27,7 @@ def RIGTH_TURN(deg):
     GPIO_SETUP(0, 0, 0, 0)
 
     while degree > 0.0:
+        print(degree)
         GPIO_SETUP(1, 0, 0, 0)
         GPIO_SETUP(1, 1, 0, 0)
         GPIO_SETUP(0, 1, 0, 0)
@@ -36,7 +37,7 @@ def RIGTH_TURN(deg):
         GPIO_SETUP(0, 0, 1, 1)
         GPIO_SETUP(0, 0, 0, 1)
         GPIO_SETUP(1, 0, 0, 1)
-        degree -= -1
+        degree -= 1
 
 def LEFT_TURN(deg):
     full_circle = 510.0
@@ -52,9 +53,12 @@ def LEFT_TURN(deg):
         GPIO_SETUP(0, 1, 0, 0)
         GPIO_SETUP(1, 1, 0, 0)
         GPIO_SETUP(1, 0, 0, 0)
-        degree -= -1
+        degree -= 1
 
-RIGTH_TURN(90)
-LEFT_TURN(90)
-RIGTH_TURN(90)
+LEFT_TURN(360)
+RIGTH_TURN(360)
+LEFT_TURN(360)
+RIGTH_TURN(360)
+
+
 GPIO_SETUP(0, 0, 0, 0)
