@@ -28,7 +28,6 @@ def RIGTH_TURN(deg):
     GPIO_SETUP(0, 0, 0, 0)
 
     while degree > 0.0:
-        print(degree)
         GPIO_SETUP(1, 0, 0, 0)
         GPIO_SETUP(1, 1, 0, 0)
         GPIO_SETUP(0, 1, 0, 0)
@@ -61,7 +60,9 @@ if __name__ == "__main__":
     rotation = int(args[1])
     degree = float(args[2])
     if rotation == 0:
+        print(f"Starte Rechtsdrehung um {degree}°")
         RIGTH_TURN(degree)
     elif rotation == 1:
+        print(f"Starte Linksdrehung um {degree}°")
         LEFT_TURN(degree)
     GPIO_SETUP(0, 0, 0, 0)
