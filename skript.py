@@ -58,8 +58,10 @@ def LEFT_TURN(deg):
 
 if __name__ == "__main__":
     args = sys.argv
-    if args[1] == 0:
-        RIGTH_TURN(args[2])
-    elif args[1] == 1:
-        LEFT_TURN(args[2])
+    rotation = int(args[1])
+    degree = float(args[2])
+    if rotation == 0:
+        RIGTH_TURN(degree)
+    elif rotation == 1:
+        LEFT_TURN(degree)
     GPIO_SETUP(0, 0, 0, 0)
