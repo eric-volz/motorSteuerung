@@ -1,5 +1,6 @@
 import time
 import RPi.GPIO as GPIO
+import sys
 
 GPIO.setmode(GPIO.BOARD)
 GPIO.setwarnings(False)
@@ -55,10 +56,6 @@ def LEFT_TURN(deg):
         GPIO_SETUP(1, 0, 0, 0)
         degree -= 1
 
-LEFT_TURN(360)
-RIGTH_TURN(360)
-LEFT_TURN(360)
-RIGTH_TURN(360)
-
-
-GPIO_SETUP(0, 0, 0, 0)
+if __name__ == "__main__":
+    print(sys.argv)
+    GPIO_SETUP(0, 0, 0, 0)
