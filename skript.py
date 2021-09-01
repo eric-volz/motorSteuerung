@@ -22,7 +22,7 @@ def GPIO_SETUP(a, b, c, d):
     GPIO.output(D, d)
     time.sleep(0.001)
 
-def RIGTH_TURN(deg):
+def LEFT_TURN(deg):
     full_circle = 510.0
     degree = full_circle/360*deg
     GPIO_SETUP(0, 0, 0, 0)
@@ -39,7 +39,7 @@ def RIGTH_TURN(deg):
         GPIO_SETUP(1, 0, 0, 1)
         degree -= 1
 
-def LEFT_TURN(deg):
+def RIGTH_TURN(deg):
     full_circle = 510.0
     degree = full_circle/360*deg
     GPIO_SETUP(0, 0, 0, 0)
